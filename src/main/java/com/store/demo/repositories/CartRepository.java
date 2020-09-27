@@ -9,5 +9,5 @@ import java.util.List;
 public interface CartRepository extends JpaRepository<Cart, Integer> {
 
     @Query("SELECT A FROM Cart A where A.id = ?1")
-    public List<Cart> findCartsByProductId(int productId);
+    public Cart findCartByProductId(int productId);
 }
