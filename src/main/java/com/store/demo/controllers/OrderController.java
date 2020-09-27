@@ -47,6 +47,11 @@ public class OrderController {
         return this.productRepository.findAll();
     }
 
+    @GetMapping("/carts")
+    public List<Cart> getCartons() {
+        return this.cartRepository.findAll();
+    }
+
     @GetMapping("/calculate_cost")
     @ResponseBody
     public PriceDetailDTO calculateTotalCost(@RequestParam(name = "units") String numberOfUnits, @RequestParam(name = "productId") String productId) {
